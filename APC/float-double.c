@@ -2,7 +2,7 @@
 
 int main(){
     float x = 5.3f;
-    unsigned char* c = (char*)&x;
+    unsigned c  har* c = (char*)&x;
     int i;
     // scanf("%d",i);
     printf("%d\n",i);
