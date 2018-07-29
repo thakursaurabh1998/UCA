@@ -2,4 +2,4 @@
 
 > Data Structure algorithms written in C.
 
-* [Linked List](./LinkedList.c)
+* [Singly Linked List](./SinglyLinkedList.c)
