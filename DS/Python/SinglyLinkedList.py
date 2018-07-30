@@ -35,7 +35,7 @@ class LinkedList:
     def removeAtLast(self):
         """Remove element from the end of the list"""
         curr = self.head
-        while curr.next.next:
+        while curr and curr.next and curr.next.next:
             curr = curr.next
         temp = curr.next.data
         curr.next = None
