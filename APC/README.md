@@ -7,3 +7,4 @@
 * [Quick Sort lib with void pointers and comparators](./Qsort_lib_comp.c)
 * [Pascal's Triangle](./pascal-triangle.c)
 * [kth row of Pascal's Triangle](./kthRow-pascal.c)
+* [Hare tortoise methodology of traversing a linked list](./hareTortoiseLinkedList.c)
