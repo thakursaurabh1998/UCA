@@ -79,7 +79,7 @@ int main()
     {
         fastPtr = fastPtr->next->next;
         slowPtr = slowPtr->next;
-    } while(fastPtr!=slowPtr);
+    } while(fastPtr!=slowPtr && fastPtr && fastPtr->next);
 
     printf("%d %d", slowPtr->data, fastPtr->data);
     // listPrint(h);

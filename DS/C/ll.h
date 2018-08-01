@@ -1,4 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 typedef struct node
 {
@@ -115,4 +117,27 @@ void listPrint(node *h)
         curr = curr->next;
     }
     printf("\n");
+}
+
+void test()
+{
+    node *h = NULL;
+    addAtBeg(&h, 1);
+    assert(h->data == 1);
+
+    addAtLast(&h, 1);
+}
+
+int main()
+{
+    node *h = NULL;
+    addAtBeg(&h, 1);
+    addAtBeg(&h, 2);
+    addAtBeg(&h, 3);
+    addAt(&h, 34, 2);
+    listPrint(h);
+    removeAt(&h, 2);
+    listPrint(h);
+    test();
+    return 0;
 }
