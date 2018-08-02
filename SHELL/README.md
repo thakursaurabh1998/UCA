@@ -6,3 +6,5 @@
 
 * [Loops in BASH](./loops.sh)
 * [Swapping two numbers](./swap.sh)
+* [Count number of lines in a file](./countNumberOfLines.sh)
+* [Find if a file exists in the directory](./findAFile.sh)
