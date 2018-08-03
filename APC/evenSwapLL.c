@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include "ll.h"
 
-node *reverse(node *h)
+
+// iterative
+node *evenSwap(node *h)
 {
     node *curr = h;
     node *nex = h->next;
@@ -23,6 +25,19 @@ node *reverse(node *h)
     return h;
 }
 
+// recursive
+node* evenSwapR(node *curr)
+{
+    if(curr==NULL || curr->next==NULL)
+        return curr;
+    node* temp = evenSwapR(curr->next->next);
+    node* e = curr->next;
+    curr->next->next = curr;
+    curr->next = temp;
+    return e;
+
+}
+
 int main(void)
 {
     node *h = NULL;
@@ -39,7 +54,7 @@ int main(void)
 
     listPrint(h);
 
-    h = reverse(h);
+    h = evenSwapR(h);
     listPrint(h);
 
     return 0;

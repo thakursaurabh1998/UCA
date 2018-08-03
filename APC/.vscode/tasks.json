@@ -4,16 +4,16 @@
         {
             "label": "build compile",
             "type": "shell",
-            "command": "gcc \"${file}\" && ./a.exe"
-        },
-        {
-            "label": "build compile only",
-            "type": "shell",
-            "command": "gcc -g \"${file}\"",
+            "command": "gcc \"${file}\" && ./a.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "build compile only",
+            "type": "shell",
+            "command": "gcc -g \"${file}\""
         }
     ]
 }

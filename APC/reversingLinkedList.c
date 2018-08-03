@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include "ll.h"
 
-node* reverse(node *h)
+node *reverse(node *h)
 {
-    node* curr = h;
-    node* prev = NULL;
-    node* nextNode = h->next;
+    node *curr = h;
+    node *prev = NULL;
+    node *nextNode = h->next;
 
-    while(curr->next!=NULL)
+    while (curr->next != NULL)
     {
         curr->next = prev;
         prev = curr;
@@ -19,7 +19,17 @@ node* reverse(node *h)
     return h;
 }
 
-
+node *reverseR(node *first, node *second)
+{
+    if (second->next == NULL)
+    {
+        second->next = first;
+        return second;
+    }
+    node *temp = reverseR(second, second->next);
+    second->next = first;
+    return temp;
+}
 
 int main(void)
 {
@@ -37,7 +47,7 @@ int main(void)
 
     listPrint(h);
 
-    h = reverse(h);
+    h = reverseR(NULL, h);
     listPrint(h);
 
     return 0;

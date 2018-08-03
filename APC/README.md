@@ -11,12 +11,12 @@
 
 ## Linked List
 * [Hare tortoise methodology of traversing a linked list](./hareTortoiseLinkedList.c)
-* [Reversing a linked list (Iterative solution)](./reversingLinkedList.c)
-* [Swapping alternate nodes of linked list (Iterative solution)](./evenSwapLL.c)
+* [Reversing a linked list (Iterative and recursive solution)](./reversingLinkedList.c)
+* [Swapping alternate nodes of linked list (Iterative and recursive solution)](./evenSwapLL.c)
 * [Merge two sorted Linked Lists](./mergeSortedLL.c)
 
 ## Binary Search
-* [Binary Search](./binarySearch.c)
+* [Binary Search Recursive and Iteration](./binarySearch.c)
 * [Upper Bound and Lower Bound with binary search](./lowerUpperBound.c)
 
 ## Others
