@@ -31,6 +31,36 @@ node *reverseR(node *first, node *second)
     return temp;
 }
 
+node *reverseByIndices(node *head, int i, int j)
+{
+    int index = 1;
+    node *pi;
+    node *pj;
+    node *temp = head;
+
+    while (index <= j)
+    {
+        if (index == i - 1)
+            pi = temp;
+        else if (index == j - 1)
+            pj = temp;
+        temp = temp->next;
+        index++;
+    }
+
+    printf("%d %d\n", pi->next->data, pj->next->data);
+
+    node *iN = pi->next;
+    node *jN = pj->next->next;
+    
+    pi->next = pj->next;
+    pi->next->next = iN->next;
+    pj->next = iN;
+    iN->next = jN;
+
+    return head;
+}
+
 int main(void)
 {
     node *h = NULL;
@@ -47,7 +77,8 @@ int main(void)
 
     listPrint(h);
 
-    h = reverseR(NULL, h);
+    // h = reverseR(NULL, h);
+    h = reverseByIndices(h, 2, 3);
     listPrint(h);
 
     return 0;
