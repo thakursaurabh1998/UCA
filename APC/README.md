@@ -18,6 +18,8 @@
 ## Binary Search
 * [Binary Search Recursive and Iteration](./binarySearch.c)
 * [Upper Bound and Lower Bound with binary search](./lowerUpperBound.c)
+* [Square Root by binary search(InterviewBit)](./squareRoot.c)
+* [Allocate Books Google Interview Question(InterviewBit)](./allocateBooks.c)
 
 ## Others
 * [Quick Sort lib with void pointers and comparators](./Qsort_lib_comp.c)
