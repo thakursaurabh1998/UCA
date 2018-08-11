@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build compile",
+            "type": "shell",
+            "command": "gcc \"${file}\" && ./a.exe",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build compile only",
+            "type": "shell",
+            "command": "gcc -g \"${file}\""
+        }
+    ]
+}
