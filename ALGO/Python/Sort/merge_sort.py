@@ -1,4 +1,11 @@
 def merge(a, left, mid, right):
+    """
+    Merging 2 parts
+    @param a : list
+    @param left : left index value
+    @param mid : mid index value
+    @param right: right index value
+    """
     i = left
     j = mid+1
     aux = []
@@ -21,6 +28,12 @@ def merge(a, left, mid, right):
 
 
 def merge_sort(a, left, right):
+    """
+    Merge sort function
+    @param a : list
+    @param left : left index value
+    @param right: right index value
+    """
     if left == right:
         return a
     mid = (left+right)//2

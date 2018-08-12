@@ -1,6 +1,9 @@
-# Algorithms in Python
+# Algorithms in Python 3
 
 ### Sort
-* [Merge Sort](./mergeSort.py)
-* [Bubble Sort](./bubbleSort.py)
-* [Selection Sort](./selectionSort.py)
+* [Merge Sort](./Sort/merge_sort.py)
+* [Bubble Sort](./Sort/bubble_sort.py)
+* [Selection Sort](./Sort/selection_sort.py)
+
+### Search
+* [Binary Search](./Search/binary_search.py)
