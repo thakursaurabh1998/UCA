@@ -16,19 +16,20 @@ def merge(a, left, mid, right):
         aux.append(a[j])
         j += 1
     a = a[:left] + aux + a[right+1:]
-    print(aux)
+    # print(aux)
+    return a
 
 
 def merge_sort(a, left, right):
     if left == right:
-        return
-    mid = int((left+right)/2)
-    merge_sort(a, left, mid)
-    merge_sort(a, mid+1, right)
-    merge(a, left, mid, right)
+        return a
+    mid = (left+right)//2
+    a = merge_sort(a, left, mid)
+    a = merge_sort(a, mid+1, right)
+    return merge(a, left, mid, right)
 
 
 if __name__ == '__main__':
     arr = [12, 34, 56, 23, 78, 38, 43, 89]
-    merge_sort(arr, 0, len(arr)-1)
+    arr = merge_sort(arr, 0, len(arr)-1)
     print(arr)
