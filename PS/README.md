@@ -7,3 +7,5 @@
 * [Return sign of an integer using bitwise operators](./signBitwise.c)
 * [Get 1 byte of an int by using bitwise operators](./getByteBitwise.c)
 * [Solving opening and closing brackets using stack](./brackets.c)
+* [Comparing merge sort](./comparisonBubbleMerge.c)
+* [Base64 Encoding Decoding](./Base64.c)
