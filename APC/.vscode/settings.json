@@ -2,6 +2,7 @@
     "files.associations": {
         "*.js": "javascriptreact",
         "stdio.h": "c",
-        "ll.h": "c"
+        "ll.h": "c",
+        "cmath": "c"
     }
 }

@@ -7,3 +7,6 @@
 
 ### Search
 * [Binary Search](./Search/binarySearch.c)
+
+### Others
+* [Sieve of Eratosthenes to calculate prime numbers in a given range](./Others/SieveOfEratosthenes.c)
