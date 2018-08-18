@@ -15,7 +15,7 @@ selectionSort(int *arr, int n)
             temp = arr[min];
             arr[min] = arr[i];
             arr[i] = temp;
-        }
+    
     }
 }
 

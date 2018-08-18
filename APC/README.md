@@ -23,3 +23,4 @@
 
 ## Others
 * [Quick Sort lib with void pointers and comparators](./Qsort_lib_comp.c)
+* [Reversing bits of a number](./reversingBits.c)
