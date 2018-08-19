@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "ll.h"
 
+// reversing linked list iterative solution
 node *reverse(node *h)
 {
     node *curr = h;
@@ -19,6 +20,24 @@ node *reverse(node *h)
     return h;
 }
 
+// reversing a linked list upto a given position K
+node *reverseList(node *A, int K)
+{
+    node *curr = A;
+    node *start = A;
+    node *temp = A;
+    K--;
+    while (K--)
+    {
+        temp = start;
+        start = curr->next;
+        curr->next = curr->next->next;
+        start->next = temp;
+    }
+    return start;
+}
+
+// reversing a linked list recursive solution
 node *reverseR(node *first, node *second)
 {
     if (second->next == NULL)
@@ -49,15 +68,15 @@ node *reverseByIndices(node *head, int i, int j)
     }
 
     node *jN = pj->next;
-    if(i==1)
+    if (i == 1)
     {
         pi->next = head;
         head = jN;
     }
     node *iN = pi->next;
-    if(pj==iN)
-        pj=pi;
-    
+    if (pj == iN)
+        pj = pi;
+
     pj->next = pj->next->next;
     pi->next = pi->next->next;
     iN->next = pj->next;
