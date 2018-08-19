@@ -1,3 +1,5 @@
+from random import randint
+
 def insertion_sort(a):
     """
     Insertion sort algorithm function
@@ -14,6 +16,7 @@ def insertion_sort(a):
 
 
 if __name__ == '__main__':
-    ARR = [56, 23, 45, 54, 76, 98, 34, 54, 12, 1]
+    n = int(input("Enter the number of elements you want: "))
+    ARR = [randint(0, 1000) for _ in range(n)]
     ARR = insertion_sort(ARR)
     print(ARR)

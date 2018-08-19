@@ -15,7 +15,7 @@ selectionSort(int *arr, int n)
             temp = arr[min];
             arr[min] = arr[i];
             arr[i] = temp;
-    
+        }
     }
 }
 
@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
     int i;
     int arr[] = {56, 23, 45, 54, 76, 98, 34, 54, 12, 1};
     selectionSort(arr, 10);
-    for(i=0;i<10;i++)
-        printf("%d\t",arr[i]);
+    for (i = 0; i < 10; i++)
+        printf("%d ", arr[i]);
     return 0;
 }
