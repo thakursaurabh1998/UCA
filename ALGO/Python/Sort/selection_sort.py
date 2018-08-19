@@ -2,6 +2,6 @@ def selection_sort(a):
     
 
 if __name__ == '__main__':
-    arr = [12, 34, 56, 23, 78, 38, 43, 89]
-    arr = merge_sort(arr, 0, len(arr)-1)
-    print(arr)
+    ARR = [56, 23, 45, 54, 76, 98, 34, 54, 12, 1]
+    ARR = merge_sort(ARR, 0, len(ARR)-1)
+    print(ARR)
