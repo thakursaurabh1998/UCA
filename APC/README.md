@@ -14,6 +14,7 @@
 * [Reversing a linked list (Iterative and recursive solution)](./reversingLinkedList.c)
 * [Swapping alternate nodes of linked list (Iterative and recursive solution)](./evenSwapLL.c)
 * [Merge two sorted Linked Lists](./mergeSortedLL.c)
+* [Check if a Linked List is palindromic or not](./palindromeLinkedList.c)
 
 ## Binary Search
 * [Binary Search Recursive and Iteration](./binarySearch.c)

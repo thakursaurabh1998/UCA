@@ -37,6 +37,37 @@ node *reverseList(node *A, int K)
     return start;
 }
 
+// reversing linked list from a given point to a given point
+node *reverseListInRange(node *A, int J, int K)
+{
+    int counter = 1;
+    node *h = A;
+    while (J > 1 && counter != J - 1)
+    {
+        A = A->next;
+        counter++;
+    }
+    node *ok = A;
+    if (J != 1)
+        A = A->next;
+    // printf("%d\n",A->data);
+    node *curr = A;
+    node *start = A;
+    node *temp = A;
+    K = K - J;
+    while (K--)
+    {
+        temp = start;
+        start = curr->next;
+        ok->next = start;
+        curr->next = curr->next->next;
+        start->next = temp;
+    }
+    if (J == 1)
+        return start;
+    return h;
+}
+
 // reversing a linked list recursive solution
 node *reverseR(node *first, node *second)
 {
@@ -50,7 +81,7 @@ node *reverseR(node *first, node *second)
     return temp;
 }
 
-node *reverseByIndices(node *head, int i, int j)
+node *swapByIndices(node *head, int i, int j)
 {
     int index = 1;
     node *pi;
@@ -104,7 +135,7 @@ int main(void)
     listPrint(h);
 
     // h = reverseR(NULL, h);
-    h = reverseByIndices(h, 1, 2);
+    h = reverseListInRange(h, 5, 10);
     listPrint(h);
 
     return 0;
