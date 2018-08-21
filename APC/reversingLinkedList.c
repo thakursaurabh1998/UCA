@@ -81,6 +81,7 @@ node *reverseR(node *first, node *second)
     return temp;
 }
 
+// swap two nodes by indices
 node *swapByIndices(node *head, int i, int j)
 {
     int index = 1;
@@ -135,7 +136,7 @@ int main(void)
     listPrint(h);
 
     // h = reverseR(NULL, h);
-    h = reverseListInRange(h, 5, 10);
+    h = swapByIndices(h, 1, 10);
     listPrint(h);
 
     return 0;

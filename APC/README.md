@@ -15,12 +15,18 @@
 * [Swapping alternate nodes of linked list (Iterative and recursive solution)](./evenSwapLL.c)
 * [Merge two sorted Linked Lists](./mergeSortedLL.c)
 * [Check if a Linked List is palindromic or not](./palindromeLinkedList.c)
+* [Remove Nth node from the end of a linked list](./removeNthNodeFromEnd.c)
+* [Partition Of linked list(Interview Bit)](./partitionLL.c)
+* [Rotate linked list(Interview Bit)](./rotateLL.c)
 
 ## Binary Search
 * [Binary Search Recursive and Iteration](./binarySearch.c)
 * [Upper Bound and Lower Bound with binary search](./lowerUpperBound.c)
 * [Square Root by binary search(InterviewBit)](./squareRoot.c)
 * [Allocate Books Google Interview Question(InterviewBit)](./allocateBooks.c)
+
+## Strings
+* [Self implementation of strstr(Interview Bit)](./strstr.c)
 
 ## Others
 * [Quick Sort lib with void pointers and comparators](./Qsort_lib_comp.c)
