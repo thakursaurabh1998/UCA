@@ -18,6 +18,7 @@
 * [Remove Nth node from the end of a linked list](./removeNthNodeFromEnd.c)
 * [Partition Of linked list(Interview Bit)](./partitionLL.c)
 * [Rotate linked list(Interview Bit)](./rotateLL.c)
+* [Reorder linked list(Interview Bit)](./reorderLL.c)
 
 ## Binary Search
 * [Binary Search Recursive and Iteration](./binarySearch.c)
