@@ -19,6 +19,8 @@
 * [Partition Of linked list(Interview Bit)](./partitionLL.c)
 * [Rotate linked list(Interview Bit)](./rotateLL.c)
 * [Reorder linked list(Interview Bit)](./reorderLL.c)
+* [Insertion Sort linked list(Interview Bit)](./insertionSortLL.c)
+* [Add 2 numbers linked list(Interview Bit)](./addTwoNumbersLL.c)
 
 ## Binary Search
 * [Binary Search Recursive and Iteration](./binarySearch.c)
