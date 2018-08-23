@@ -35,5 +35,6 @@ int upperBound(int *arr, int n, int num)
 int main()
 {
     int arr[] = {1,1,2,2,2,3,3,3,5,5,5,6,6,6};
-    printf("%d",upperBound(arr,14,6));
+    printf("%d\n",lowerBound(arr,14,3));
+    printf("%d\n",upperBound(arr,14,3));
 }

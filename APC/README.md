@@ -27,9 +27,11 @@
 * [Upper Bound and Lower Bound with binary search](./lowerUpperBound.c)
 * [Square Root by binary search(InterviewBit)](./squareRoot.c)
 * [Allocate Books Google Interview Question(InterviewBit)](./allocateBooks.c)
+* [Painter Problem(Interview Bit)](./painterProblem.c)
 
 ## Strings
 * [Self implementation of strstr(Interview Bit)](./strstr.c)
+* [Longest Palindromic String (Dynamic Solution 2D matrix)](./longestPalindromicString.c)
 
 ## Others
 * [Quick Sort lib with void pointers and comparators](./Qsort_lib_comp.c)
