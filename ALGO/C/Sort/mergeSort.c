@@ -3,13 +3,19 @@
 
 static int aux[10];
 
+int intCmp(int *x, int *y)
+{
+    printf("%d %d\n", *x, *y);
+    return *(x) < *(y);
+}
+
 void merge(int *arr, int l, int mid, int r)
 {
     int i = l;
     int j = mid + 1;
     int k = 0;
     while (i <= mid && j <= r)
-        if (arr[i] < arr[j])
+        if (intCmp(arr+i,arr+j))
             aux[k++] = arr[i++];
         else
             aux[k++] = arr[j++];
@@ -33,10 +39,10 @@ void mergeSort(int *arr, int l, int r)
 
 int main()
 {
-    int arr[] = {56, 23, 45, 54, 76, 98, 34, 54, 12, 1};
-    mergeSort(arr, 0, 9);
-    // int arr[] = {5,7,2,6,1};
-    // mergeSort(arr,0,4);
+    // int arr[] = {56, 23, 45, 54, 76, 98, 34, 54, 12, 1};
+    // mergeSort(arr, 0, 9);
+    int arr[] = {5,2,1,4,3};
+    mergeSort(arr,0,4);
     int i;
     for (i = 0; i < 10; i++)
         printf("%d ", arr[i]);

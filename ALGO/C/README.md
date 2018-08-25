@@ -7,6 +7,7 @@
 * [Selection Sort](./Sort/selectionSort.c)
 * [Insertion Sort](./Sort/insertionSort.c)
 * [Quick Sort](./Sort/quickSort.c)
+* [Generic Quick Sort](./Sort/genericQuickSort.c)
 
 ### Search
 * [Binary Search](./Search/binarySearch.c)
