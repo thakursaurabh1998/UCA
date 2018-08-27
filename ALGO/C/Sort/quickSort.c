@@ -39,3 +39,11 @@ int main()
         printf("%d ", arr[i]);
     return 0;
 }
+
+void jk(int arr[])
+{
+    int i;
+    int a[5] = {5, 65, 45, 2, 25};
+    for (i = 1; i < 4; i++)
+        a[i] = a[i - 1] – a[i] + a[i + 1];
+}
