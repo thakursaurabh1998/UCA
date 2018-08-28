@@ -36,6 +36,7 @@
 
 - [Self implementation of strstr(Interview Bit)](./strstr.c)
 - [Longest Palindromic String (Dynamic Solution 2D matrix)](./longestPalindromicString.c)
+- [Count and Say (Interview Bit)](./countAndSay.c)
 
 ## Others
 
