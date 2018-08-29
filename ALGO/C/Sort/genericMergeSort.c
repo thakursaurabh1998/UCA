@@ -16,7 +16,7 @@ void merge(void *arr, void *aux, int l, int mid, int r, int (*cmp)(void *, void 
     while (i <= mid && j <= r)
     {
         temp = k * size;
-        if (intCmp(arr + i * size, arr + j * size))
+        if (cmp(arr + i * size, arr + j * size))
             memcpy(aux + (k++) * size, arr + (i++) * size, size);
         else
             memcpy(aux + (k++) * size, arr + (j++) * size, size);
