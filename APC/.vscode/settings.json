@@ -4,6 +4,8 @@
         "stdio.h": "c",
         "ll.h": "c",
         "cmath": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "vector": "cpp",
+        "stack.h": "c"
     }
 }

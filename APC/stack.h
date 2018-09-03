@@ -1,10 +1,9 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
 typedef struct Stack
 {
-    int *stackarr;
+    int *arr;
     int top;
     int size;
 } Stack;
@@ -12,7 +11,7 @@ typedef struct Stack
 void initialize(Stack *stack, int x)
 {
     stack->size = x;
-    stack->stackarr = (int *)malloc(stack->size * sizeof(int));
+    stack->arr = (int *)malloc(stack->size * sizeof(int));
     stack->top = -1;
 }
 
@@ -38,7 +37,7 @@ void push(Stack *stack, int x)
         return;
     }
     stack->top += 1;
-    stack->stackarr[stack->top] = x;
+    stack->arr[stack->top] = x;
 }
 
 int pop(Stack *stack)
@@ -49,7 +48,7 @@ int pop(Stack *stack)
         return -1;
     }
     stack->top -= 1;
-    return stack->stackarr[stack->top + 1];
+    return stack->arr[stack->top + 1];
 }
 
 int peek(Stack *stack)
@@ -59,26 +58,5 @@ int peek(Stack *stack)
         printf("Stack is empty\n");
         return -1;
     }
-    return stack->stackarr[stack->top];
-}
-
-int main()
-{
-    Stack *stk = (Stack *)malloc(sizeof(Stack));
-    initialize(stk, 5);
-    printf("%d\n", peek(stk));
-    printf("%d\n", pop(stk));
-    push(stk, 1);
-    push(stk, 2);
-    push(stk, 3);
-    push(stk, 4);
-    push(stk, 5);
-    push(stk, 5);
-    // push(stk, 5);
-    printf("%d\n", pop(stk));
-    printf("%d\n", pop(stk));
-    printf("%d\n", peek(stk));
-    printf("%d\n", pop(stk));
-
-    return 0;
+    return stack->arr[stack->top];
 }

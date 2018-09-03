@@ -38,6 +38,10 @@
 - [Longest Palindromic String (Dynamic Solution 2D matrix)](./longestPalindromicString.c)
 - [Count and Say (Interview Bit)](./countAndSay.c)
 
+## Stack
+- [Infix to Postfix](./infixToPostfix.c)
+- [Trap Water](./trapWater.c)
+
 ## Others
 
 - [Quick Sort lib with void pointers and comparators](./Qsort_lib_comp.c)
