@@ -4,3 +4,4 @@
 
 - [Singly Linked List](./SinglyLinkedList.c)
 - [Stack (created with array)](./StackArray.c)
+- [Binary Tree (C++)](./BinaryTree.cpp)
