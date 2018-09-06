@@ -69,6 +69,23 @@ void recursivePostorder(Btree *root)
     cout << root->data << " ";
 }
 
+void iterativeLevel(Btree *root)
+{
+    queue<Btree *> q;
+    Btree *node;
+    q.push(root);
+    while (!q.empty())
+    {
+        node = q.front();
+        q.pop();
+        if (node->left)
+            q.push(node->left);
+        if (node->right)
+            q.push(node->right);
+        cout << node->data << " ";
+    }
+}
+
 void iterativeInorder(Btree *root)
 {
     stack<Btree *> stk;
@@ -107,20 +124,63 @@ void iterativePreorder(Btree *root)
     }
 }
 
-void iterativeLevel(Btree *root)
+// using single stack
+void iterativePostorder(Btree *root)
 {
-    queue<Btree *> q;
-    Btree *node;
-    q.push(root);
-    while (!q.empty())
+    stack<Btree *> stk;
+    int flag = 0;
+    while (1)
     {
-        node = q.front();
-        q.pop();
-        if (node->left)
-            q.push(node->left);
+        if (flag == 0)
+            while (root)
+            {
+                stk.push(root);
+                root = root->left;
+            }
+        if (stk.empty())
+            return;
+        Btree *node = stk.top();
+        stk.pop();
         if (node->right)
-            q.push(node->right);
-        cout << node->data << " ";
+        {
+            stk.push(node);
+            root = node->right;
+            flag = 0;
+        }
+        else
+        {
+            cout << node->data << " ";
+            flag = 1;
+            while (!stk.empty() && stk.top()->right == node)
+            {
+                node = stk.top();
+                stk.pop();
+                cout << node->data << " ";
+            }
+        }
+    }
+}
+
+// Using 2 stacks
+void iterativePostorderAlt(Btree *root)
+{
+    stack<Btree *> stk1;
+    stack<Btree *> stk2;
+    stk1.push(root);
+    while (!stk1.empty())
+    {
+        Btree *node = stk1.top();
+        stk1.pop();
+        stk2.push(node);
+        if (node->left)
+            stk1.push(node->left);
+        if (node->right)
+            stk1.push(node->right);
+    }
+    while (!stk2.empty())
+    {
+        cout << stk2.top()->data << " ";
+        stk2.pop();
     }
 }
 
@@ -147,6 +207,10 @@ int main()
     cout << " : Iterative Preorder" << endl;
     recursivePostorder(bt);
     cout << " : Recursive Postorder" << endl;
+    iterativePostorder(bt);
+    cout << " : Iterative Postorder" << endl;
+    iterativePostorderAlt(bt);
+    cout << " : Iterative Postorder 2 stacks" << endl;
 
     return 0;
 }
