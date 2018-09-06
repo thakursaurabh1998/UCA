@@ -40,8 +40,15 @@
 - [Version number comparison (Interview Bit)](./versionNumber.cpp)
 
 ## Stack
-- [Infix to Postfix](./infixToPostfix.c)
-- [Trap Water](./trapWater.c)
+
+- [Infix to Postfix (Interview Bit)](./infixToPostfix.c)
+- [Trap Water (Interview Bit)](./trapWater.c)
+- [Equal Stacks (Hackerrank)](./EqualStacks.c)
+
+
+## Binary Tree
+
+- [Top view of Binary Tree (Important Question)](./topView.cpp)
 
 ## Others
 
