@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile java",
+            "type": "shell",
+            "command": "javac \"${file}\" && java \"${fileBasenameNoExtension}\"",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build compile only",
+            "type": "shell",
+            "command": "gcc -g \"${file}\""
+        }
+    ]
+}
