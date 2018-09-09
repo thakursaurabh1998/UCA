@@ -52,6 +52,7 @@
 - [Top view of Binary Tree (Important Question)](./topView.cpp)
 - [Morison Inorder Traversal](./morisonInorderTraversal.cpp)
 - [Morison Inorder Traversal](./morisonPreorderTraversal.cpp)
+- [Diameter of Binary tree O(N) solution](./diameterOfBT.cpp)
 
 ## Others
 
