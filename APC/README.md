@@ -43,7 +43,7 @@
 ## Stack
 
 - [Infix to Postfix (Interview Bit)](./infixToPostfix.c)
-- [Trap Water (Interview Bit)](./trapWater.c)
+- [Trap Water (Interview Bit)](./trappingWater.c)
 - [Equal Stacks (Hackerrank)](./EqualStacks.c)
 
 
