@@ -53,6 +53,7 @@
 - [Morison Inorder Traversal](./morisonInorderTraversal.cpp)
 - [Morison Inorder Traversal](./morisonPreorderTraversal.cpp)
 - [Diameter of Binary tree O(N) solution](./diameterOfBT.cpp)
+- [Minimum depth of Binary tree (Interview Bit)](./minDepthBT.cpp)
 
 ## Others
 
