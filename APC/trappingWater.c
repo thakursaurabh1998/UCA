@@ -3,25 +3,6 @@
 
 #define MIN(X, Y) ((X < Y) ? X : Y)
 
-// int waterTrapped(int *arr, int n)
-// {
-//     Stack *stk = (Stack *)malloc(sizeof(Stack));
-//     initialize(stk, n);
-//     int total = 0, i = 0, start = arr[0];
-//     // printf("%d",peek(stk));
-//     int current = 0;
-//     while (current < n)
-//     {
-//         if (arr[current] > peek(stk))
-//         {
-//             while (!isEmpty(stk))
-//             {
-//             }
-//         }
-//     }
-//     return total;
-// }
-
 // Array style
 int trapWaterArr(int *A, int n)
 {

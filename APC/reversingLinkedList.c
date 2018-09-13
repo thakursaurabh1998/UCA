@@ -2,22 +2,18 @@
 #include "ll.h"
 
 // reversing linked list iterative solution
-node *reverse(node *h)
+node *reverse(node *head)
 {
-    node *curr = h;
-    node *prev = NULL;
-    node *nextNode = h->next;
-
-    while (curr->next != NULL)
+    node *curr = head;
+    node *temp;
+    while (curr && curr->next)
     {
-        curr->next = prev;
-        prev = curr;
-        curr = nextNode;
-        nextNode = curr->next;
+        temp = curr->next;
+        curr->next = temp->next;
+        temp->next = head;
+        head = temp;
     }
-    curr->next = prev;
-    h = curr;
-    return h;
+    return head;
 }
 
 // reversing a linked list upto a given position K
@@ -119,6 +115,11 @@ node *swapByIndices(node *head, int i, int j)
     return head;
 }
 
+node *reversePractice(node *head)
+{
+    
+}
+
 int main(void)
 {
     node *h = NULL;
@@ -136,7 +137,8 @@ int main(void)
     listPrint(h);
 
     // h = reverseR(NULL, h);
-    h = swapByIndices(h, 1, 10);
+    // h = swapByIndices(h, 1, 10);
+    h = reversePractice(h);
     listPrint(h);
 
     return 0;

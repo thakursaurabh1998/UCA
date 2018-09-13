@@ -45,6 +45,7 @@
 - [Infix to Postfix (Interview Bit)](./infixToPostfix.c)
 - [Trap Water (Interview Bit)](./trappingWater.c)
 - [Equal Stacks (Hackerrank)](./EqualStacks.c)
+- [Largest area in a histogram (Interview Bit)](./largestRectangleInHistogram.c)
 
 
 ## Binary Tree
