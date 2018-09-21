@@ -57,6 +57,7 @@
 - [Minimum depth of Binary tree (Interview Bit)](./minDepthBT.cpp)
 - [Equal trees (Interview Bit)](./EqualTrees.cpp)
 - [Mirror image of a binary tree](./mirrorImageOfBT.cpp)
+- [Path with maximum sum from root to leaf](./maximumSumBT.cpp)
 
 ## Others
 
