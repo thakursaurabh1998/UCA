@@ -55,6 +55,8 @@
 - [Morison Inorder Traversal](./morisonPreorderTraversal.cpp)
 - [Diameter of Binary tree O(N) solution](./diameterOfBT.cpp)
 - [Minimum depth of Binary tree (Interview Bit)](./minDepthBT.cpp)
+- [Equal trees (Interview Bit)](./EqualTrees.cpp)
+- [Mirror image of a binary tree](./mirrorImageOfBT.cpp)
 
 ## Others
 

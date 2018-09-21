@@ -20,7 +20,8 @@ public class QueueCircular implements QueueInterface {
         this.rear = (this.rear + 1) % this.capacity;
         this.a[this.rear] = data;
         this.size++;
-        // System.out.println("Front: " + this.front + " Rear: " + this.rear + " Size: " + this.size);
+        // System.out.println("Front: " + this.front + " Rear: " + this.rear + " Size: "
+        // + this.size);
     }
 
     @Override
@@ -49,9 +50,28 @@ public class QueueCircular implements QueueInterface {
 
     @Override
     public void printQueue() {
-        for (int i = 0 + this.front; i < this.capacity - this.rear; i++)
-            System.out.print(this.a[i] + " " + this.rear + "\n");
-        System.out.println();
+        System.out.println("Front: " + this.front + " Rear: " + this.rear + " Size: " + this.size);
+        // for (int i = 0; i < this.capacity; i++)
+        // System.out.println(this.a[i]);
+        if (this.size == 0) {
+            System.out.println("Queue is empty");
+            return;
+        }
+        for(int i=0;i<this.capacity;i++)
+            System.out.print(this.a[i] + " ");
+        int i = this.front;
+        int p = 0;
+        // if (this.rear >= this.front) {
+        while ((this.front + p++) % this.capacity <= this.rear) {
+            System.out.println(this.a[i]);
+            i = (i + 1) % this.capacity;
+        }
+        // }else
+
+        // {
+        // for (int i = this.front; i <= this.rear; i = (i + 1) % this.capacity)
+        // System.out.println(this.a[i]);
+        // }System.out.println();
     }
 
     public static void main(String[] args) {
@@ -61,19 +81,28 @@ public class QueueCircular implements QueueInterface {
             q.enqueue(1);
             q.enqueue(2);
             q.enqueue(3);
-            System.out.println(q.dequeue());
-            System.out.println(q.dequeue());
-            System.out.println(q.dequeue());
             // q.printQueue();
-            q.enqueue(4);
-            q.enqueue(5);
+            // q.enqueue(4);
+            // q.enqueue(5);
+            // System.out.println(q.dequeue());
+            // System.out.println(q.dequeue());
+            // System.out.println(q.dequeue());
+            q.dequeue();
+            q.dequeue();
+            q.dequeue();
+            q.printQueue();
             q.enqueue(6);
             q.enqueue(7);
             q.enqueue(8);
-            System.out.println(q.dequeue());
             q.enqueue(9);
-            System.out.println(q.dequeue());
             q.enqueue(10);
+            q.printQueue();
+            // System.out.println(q.dequeue());
+            // System.out.println(q.dequeue());
+            // System.out.println(q.dequeue());
+            // System.out.println(q.dequeue());
+            // System.out.println(q.dequeue());
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

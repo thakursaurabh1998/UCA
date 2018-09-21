@@ -115,11 +115,6 @@ node *swapByIndices(node *head, int i, int j)
     return head;
 }
 
-node *reversePractice(node *head)
-{
-    
-}
-
 int main(void)
 {
     node *h = NULL;
@@ -138,7 +133,7 @@ int main(void)
 
     // h = reverseR(NULL, h);
     // h = swapByIndices(h, 1, 10);
-    h = reversePractice(h);
+    h = reverse(h);
     listPrint(h);
 
     return 0;
