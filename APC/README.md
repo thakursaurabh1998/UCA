@@ -47,7 +47,6 @@
 - [Equal Stacks (Hackerrank)](./EqualStacks.c)
 - [Largest area in a histogram (Interview Bit)](./largestRectangleInHistogram.c)
 
-
 ## Binary Tree
 
 - [Top view of Binary Tree (Important Question)](./topView.cpp)
@@ -58,6 +57,7 @@
 - [Equal trees (Interview Bit)](./EqualTrees.cpp)
 - [Mirror image of a binary tree](./mirrorImageOfBT.cpp)
 - [Path with maximum sum from root to leaf](./maximumSumBT.cpp)
+- [Construct BT from preorder and inorder arrays](./constructTreeInorderPreorder.cpp)
 
 ## Others
 
