@@ -1,5 +1,6 @@
-# Data Structure 
+# Data Structure
 
 > Data Structure algorithms written in Java.
 
-* [Circular Queue](./QueueCircular.java)
+- [Circular Queue](./QueueCircular.java)
+- [Minimum Priority Queue (Binary Heap)](./MinPriorityQueue.java)
