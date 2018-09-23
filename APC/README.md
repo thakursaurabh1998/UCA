@@ -57,7 +57,8 @@
 - [Equal trees (Interview Bit)](./EqualTrees.cpp)
 - [Mirror image of a binary tree](./mirrorImageOfBT.cpp)
 - [Path with maximum sum from root to leaf](./maximumSumBT.cpp)
-- [Construct BT from preorder and inorder arrays](./constructTreeInorderPreorder.cpp)
+- [Construct BT from preorder and inorder arrays(Interview Bit)](./constructTreeInorderPreorder.cpp)
+- [Construct BT from postorder and inorder arrays(Interview Bit)](./constructTreeInorderPostorder.cpp)
 
 ## Others
 

@@ -45,6 +45,8 @@ int main()
     recursiveInorder(root);
     cout << endl;
     recursivePreorder(root);
+    cout << endl;
+    recursivePostorder(root);
     // cout << endl << root->data << root->left->data << root->left->right->data;
     // root = root->left;
     // cout << root->data << endl;
