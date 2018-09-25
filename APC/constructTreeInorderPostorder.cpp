@@ -11,15 +11,10 @@ int find(int num, int *ino, int left, int right)
 
 void constructTree(int *post, int *ino, int left, int right, Btree **root, int *index)
 {
-    // cout << left << " " << right << " " << *post << endl;
     int mid = find(post[*index], ino, left, right);
-    // cout << "MID: " << mid << endl;
-    // cout << left << " " << right << " " << mid << " " << post[*index] << endl;
     if (mid == -1)
     {
-        // cout << "PRE " << post[*index] << endl;
         *root = NULL;
-        // return;
     }
     else
     {
@@ -27,10 +22,8 @@ void constructTree(int *post, int *ino, int left, int right, Btree **root, int *
         (*root)->left = new Btree();
         (*root)->right = new Btree();
         *index -= 1;
-        // cout << "data: " << (*root)->data << endl;
         constructTree(post, ino, mid + 1, right, &((*root)->right), index);
         constructTree(post, ino, left, mid - 1, &((*root)->left), index);
-        // cout << "MIDA: " << mid << endl;
     }
 }
 

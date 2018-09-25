@@ -59,6 +59,7 @@
 - [Path with maximum sum from root to leaf](./maximumSumBT.cpp)
 - [Construct BT from preorder and inorder arrays(Interview Bit)](./constructTreeInorderPreorder.cpp)
 - [Construct BT from postorder and inorder arrays(Interview Bit)](./constructTreeInorderPostorder.cpp)
+- [Find given sum from root to leaf of a Binary Tree(Interview Bit)](./sumFromRootToLeaf.cpp)
 
 ## Others
 
