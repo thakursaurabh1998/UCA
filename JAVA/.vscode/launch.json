@@ -6,6 +6,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - GenericClass",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "GenericClass",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch)",
             "request": "launch",
             "cwd": "${workspaceFolder}\\Jun19\\Project 1",

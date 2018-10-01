@@ -8,6 +8,15 @@ typedef struct node
     int data;
 } node;
 
+node *createNode(int data)
+{
+    node *temp = (node *)malloc(sizeof(node));
+    temp->data = data;
+    temp->left = NULL;
+    temp->right = NULL;
+    return temp;
+}
+
 void recursiveInorder(node *root)
 {
     if (root == NULL)
@@ -29,37 +38,82 @@ node *find(node *root, int x)
         find(root->right, x);
 }
 
-node *next(node *root, int x)
+node **next(node **root, int x)
+{
+    if (*root == NULL)
+        return root;
+    if ((*root)->data > x)
+        next(&((*root)->left), x);
+    else if ((*root)->data < x)
+        next(&((*root)->right), x);
+}
+
+node *findNextBiggest(node *tofind)
+{
+    tofind = tofind->right;
+    while (tofind->left)
+        tofind = tofind->left;
+    return tofind;
+}
+
+void insert(node **root, int x)
+{
+    if (*root == NULL)
+    {
+        *root = (node *)malloc(sizeof(node));
+        (*root)->data = x;
+        (*root)->left = NULL;
+        (*root)->right = NULL;
+    }
+    else
+    {
+        node **parent = next(root, x);
+        *parent = createNode(x);
+    }
+}
+
+node *deleteNode(node *root, int key)
 {
     if (root == NULL)
         return root;
-    if (root->data > x)
-        next(root->left, x);
-    else if (root->data < x)
-        next(root->right, x);
-}
+    if (root->data < key)
+        root->right = deleteNode(root->right, key);
+    else if (root->data > key)
+        root->left = deleteNode(root->left, key);
+    else
+    {
+        if (root->left == NULL)
+        {
+            node *temp = root->right;
+            free(root);
+            return temp;
+        }
+        else if (root->right == NULL)
+        {
+            node *temp = root->left;
+            free(root);
+            return temp;
+        }
 
-void insert(node *root, int x)
-{
-    node *parent = next(root, x);
-    parent = (node *)malloc(sizeof(node));
-    parent->data = x;
+        node *temp = findNextBiggest(root);
+        root->data = temp->data;
+        deleteNode(root->right, root->data);
+    }
+    return root;
 }
-
-node *delete (node *root, int x);
 
 void rangeSearch(node *root, int x, int y);
 
 int main()
 {
-    node *head = (node *)malloc(sizeof(node));
-    head->data = 5;
-    head->left = (node *)malloc(sizeof(node));
-    head->right = (node *)malloc(sizeof(node));
-    head->left->data = 4;
-    head->right->data = 6;
-    // printf("%d", find(head, 2)->data);
-    // recursiveInorder(head);
-    printf("%d %d %d", head->left->data, head->data, head->right->data);
+    node *head = NULL;
+    insert(&head, 2);
+    insert(&head, 4);
+    insert(&head, 3);
+    insert(&head, 1);
+    recursiveInorder(head);
+    printf("\n");
+    deleteNode(head, 2);
+    recursiveInorder(head);
     return 0;
 }
