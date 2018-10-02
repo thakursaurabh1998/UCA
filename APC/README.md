@@ -65,6 +65,7 @@
 
 - [Valid Binary Search Tree from preorder](./validBST.c)
 - [Create a Binary Search Tree from a sorted array](./bstFromSortedArray.c)
+- [Find Lowest common ancestor](./lowestCommonAncestor.c)
 
 ## Others
 
