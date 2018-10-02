@@ -60,7 +60,11 @@
 - [Construct BT from preorder and inorder arrays(Interview Bit)](./constructTreeInorderPreorder.cpp)
 - [Construct BT from postorder and inorder arrays(Interview Bit)](./constructTreeInorderPostorder.cpp)
 - [Find given sum from root to leaf of a Binary Tree(Interview Bit)](./sumFromRootToLeaf.cpp)
+
+## Binary Search Tree
+
 - [Valid Binary Search Tree from preorder](./validBST.c)
+- [Create a Binary Search Tree from a sorted array](./bstFromSortedArray.c)
 
 ## Others
 
