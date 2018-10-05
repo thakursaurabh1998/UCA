@@ -66,6 +66,11 @@
 - [Valid Binary Search Tree from preorder](./validBST.c)
 - [Create a Binary Search Tree from a sorted array](./bstFromSortedArray.c)
 - [Find Lowest common ancestor](./lowestCommonAncestor.c)
+- [AVL Tree (Balancing binary search tree)](./AVLtree.c)
+
+## Tree
+
+- [Trie Tree for storing strings (Prefix Suffix)](./trieTree.c)
 
 ## Others
 
