@@ -6,6 +6,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - GenericMethod",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "GenericMethod",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - GenericClass",
             "request": "launch",
             "cwd": "${workspaceFolder}",

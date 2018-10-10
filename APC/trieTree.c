@@ -35,11 +35,7 @@ void insert(trie *root, char str[])
 bool search(trie *root, char str[], int index)
 {
     if (index == strlen(str))
-    {
-        if (!root->isEndOfWord)
-            return false;
-        return true;
-    }
+        return root->isEndOfWord;
     int j = str[index] - 'a';
     if (!root->arr[j])
         return false;
@@ -84,6 +80,6 @@ int main()
     trie *o = createNode();
     insert(o, "hello");
     insert(o, "hell");
-    printf("%d", search(o, "hello", 0));
+    printf("%d", search(o, "helloo", 0));
     return 0;
 }
