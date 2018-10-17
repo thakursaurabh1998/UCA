@@ -5,3 +5,4 @@
 - [Circular Queue](./QueueCircular.java)
 - [Minimum Priority Queue (Binary Heap)](./MinPriorityQueue.java)
 - [AVL Tree](./AVLTree.java)
+- [Graph and algorithms (DFS)](./Graph.java)
