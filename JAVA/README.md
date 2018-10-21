@@ -8,3 +8,6 @@
 - [___Trie tree___ Hotel Review (Interview Bit)](./ADI/Trie.java)
 - [Merge K sorted Linked List (Interview Bit)](./ADI/MergeKSortedLL.java)
 - [N max pair combinations](./ADI/MaxPairComb.java)
+
+## Graph
+- [Leaves of a subtree (DFS)](./ADI/LeavesOfSubtree.java)
