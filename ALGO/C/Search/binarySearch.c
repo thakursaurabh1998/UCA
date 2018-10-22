@@ -38,6 +38,6 @@ int binarySearchR(int *arr, int left, int right, int search)
 int main()
 {
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
-    printf("%d", binarySearchR(arr, 0, 7, 8));
+    printf("%d", binarySearchR(arr, 0, 7, 8)); //finds the given number using binary search.
     return 0;
 }
