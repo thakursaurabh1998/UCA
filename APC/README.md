@@ -22,6 +22,7 @@
 - [Reorder linked list(Interview Bit)](./reorderLL.c)
 - [Insertion Sort linked list(Interview Bit)](./insertionSortLL.c)
 - [Add 2 numbers linked list(Interview Bit)](./addTwoNumbersLL.c)
+- [Remove duplicate value from linked list(Interview Bit)](./removeDuplicatesSortedLL.c)
 
 ## Binary Search
 
