@@ -6,6 +6,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TowerOfHanoi",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "TowerOfHanoi",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - GenericMethod",
             "request": "launch",
             "cwd": "${workspaceFolder}",
