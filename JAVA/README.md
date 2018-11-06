@@ -2,6 +2,10 @@
 
 > Advanced Data Structures in JAVA. Questions done in classroom.
 
+## Linked List
+
+- [LRU cache (Interview Bit)](./ADI/LRUCache.java)
+
 ## Binary Tree
 
 - [Convert Binary search tree to doubly linked list(Singly LL applied)](./ADI/BSTtoLL.java)
