@@ -14,6 +14,7 @@
 - [Sum root to leaf numbers (Interview Bit)](./ADI/SumRootToLeaf.java)
 - [All possible paths from root to leaves (Interview Bit)](./ADI/RootToLeaves.java)
 - [All possible paths from root to leaves with given sum (Interview Bit)(**_ArrayList Solution_**)](./ADI/RootToLeavesWithSum.java)
+- [Flatten Binary Tree to Linked List (Interview Bit)](./ADI/FlattenBTtoLL.java)
 
 ## Heap
 

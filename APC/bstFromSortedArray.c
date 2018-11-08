@@ -40,12 +40,14 @@ node *createBST(int *arr, int l, int r)
 
 int main()
 {
-    int arr[] = {1, 5, 6, 7, 9, 13, 17, 19, 45, 54, 78, 98};
+    // int arr[] = {1, 5, 6, 7, 9, 13, 17, 19, 45, 54, 78, 98};
+    // int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int arr[] = {1};
     int n = sizeof(arr) / sizeof(int);
-    printf("%d\n",n);
-    node* temp = createBST(arr, 0, n-1);
+    // printf("%d\n", n);
+    node *temp = createBST(arr, 0, n - 1);
     printf("%d", temp->data);
-    inorder(temp);
+    // inorder(temp);
 
     return 0;
 }
