@@ -12,6 +12,7 @@
 - [Calculate difference of sum of even and sum of odd nodes](./ADI/OddEvenNodes.java)
 - [Find the rank of a key in Balanced Search Tree](./ADI/RankInBST.java)
 - [Sum root to leaf numbers (Interview Bit)](./ADI/SumRootToLeaf.java)
+- [All possible paths from root to leaves (Interview Bit)](./ADI/RootToLeaves.java)
 
 ## Heap
 
