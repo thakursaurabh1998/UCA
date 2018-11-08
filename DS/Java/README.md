@@ -7,4 +7,5 @@
 - [AVL Tree](./AVLTree.java)
 - [Graph and algorithms (DFS)](./Graph.java)
 - [Red Black Tree](./RedBlackTree.java)
+- [Left leaning Red Black Tree(Simple solution for RBT)](./LeftLeaningRBT.java)
 - [Linked List](./LinkedList.java)
