@@ -1,33 +1,42 @@
 #include <stdio.h>
 #include "BinaryTree.h"
+Btree *findPredecessor(Btree *root)
+{
+    Btree *parent = root;
+    root = root->left;
+    if (!root)
+        return NULL;
+    while (root->right && root->right != parent)
+        root = root->right;
+    return root;
+}
 
 void morisonInorder(Btree *root)
 {
     Btree *curr = root;
-    Btree *curr1 = root;
-    while (curr1 && curr1->right)
+    Btree *predecessor = root;
+    while (curr)
     {
-        if (curr->left)
-        {
-            curr1 = curr->left;
-            while (curr1->right)
-                curr1 = curr1->right;
-            curr1->right = curr;
-            curr1 = curr;
-        }
-        else
+        if (!(curr->left))
         {
             cout << curr->data << " ";
-            curr1 = curr->right;
-        }
-        if (curr->right == curr1 && curr1 != NULL)
-        {
-            cout << curr1->data << " ";
-            curr->right = NULL;
-            curr = curr1->right;
+            curr = curr->right;
         }
         else
-            curr = curr->left;
+        {
+            predecessor = findPredecessor(curr);
+            if (!(predecessor->right))
+            {
+                predecessor->right = curr;
+                curr = curr->left;
+            }
+            else if (predecessor->right == curr)
+            {
+                cout << curr->data << " ";
+                curr = curr->right;
+                predecessor->right = NULL;
+            }
+        }
     }
 }
 
