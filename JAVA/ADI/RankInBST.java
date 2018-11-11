@@ -59,39 +59,45 @@ class BST {
         }
     }
 
-    private int morisonInorder(Node r, int d) {
-        Node curr = r;
-        Node curr1 = r;
+    private Node findPredecessor(Node root) {
+        Node parent = root;
+        root = root.left;
+        if (root == null)
+            return null;
+        while (root.right != null && root.right != parent)
+            root = root.right;
+        return root;
+    }
+
+    private int morisonInorder(int d) {
+        Node curr = root;
+        Node predecessor = root;
         int index = 1;
         while (curr != null) {
-            if (curr.left != null) {
-                curr1 = curr.left;
-                while (curr1.right != null)
-                    curr1 = curr1.right;
-                curr1.right = curr;
-                curr = curr.left;
-            } else {
+            if (curr.left == null) {
                 if (d == curr.data)
                     return index;
                 index++;
-                // System.out.println(curr.data);
-                if (curr.right == null)
-                    break;
-                curr1 = curr;
-                if (d == curr.right.data)
-                    return index;
-                index++;
-                // System.out.println(curr.right.data);
-                curr = curr.right.right;
-                curr1.right = null;
+                curr = curr.right;
+            } else {
+                predecessor = findPredecessor(curr);
+                if (predecessor.right == null) {
+                    predecessor.right = curr;
+                    curr = curr.left;
+                } else if (predecessor.right == curr) {
+                    if (d == curr.data)
+                        return index;
+                    index++;
+                    curr = curr.right;
+                    predecessor.right = null;
+                }
             }
         }
-
         return -1;
     }
 
     public void rank(int r) {
-        System.out.println(this.morisonInorder(this.root, r));
+        System.out.println(this.morisonInorder(r));
     }
 }
 
@@ -99,14 +105,16 @@ public class RankInBST {
 
     public static void main(String[] args) {
         BST tree = new BST();
-        tree.add(5);
-        tree.add(3);
-        tree.add(8);
         tree.add(6);
+        tree.add(7);
+        tree.add(3);
+        tree.add(9);
         tree.add(2);
+        tree.add(8);
         tree.add(4);
-        tree.add(17);
+        tree.add(10);
+        tree.add(5);
         tree.printLevel();
-        tree.rank(8);
+        tree.rank(2);
     }
 }
