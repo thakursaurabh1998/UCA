@@ -6,6 +6,26 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RecoverBST",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "RecoverBST",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - VerticalOrderTraversal",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "VerticalOrderTraversal",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TowerOfHanoi",
             "request": "launch",
             "cwd": "${workspaceFolder}",
