@@ -28,3 +28,8 @@
 ## Graph
 
 - [Leaves of a subtree (DFS)](./ADI/LeavesOfSubtree.java)
+
+## Others
+
+- [Visualizing a binary tree (Not perfect works for almost all cases, currently under development)](./ADI/VisualizeBT.java)
+![Image Mockup](./ADI/tree.png)
