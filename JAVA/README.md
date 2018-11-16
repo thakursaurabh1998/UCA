@@ -25,6 +25,10 @@
 - [Merge K sorted Linked List (Interview Bit)](./ADI/MergeKSortedLL.java)
 - [N max pair combinations](./ADI/MaxPairComb.java)
 
+## Hash
+
+- [Two sum (Interview Bit)](./ADI/TwoSum.java)
+
 ## Graph
 
 - [Leaves of a subtree (DFS)](./ADI/LeavesOfSubtree.java)
