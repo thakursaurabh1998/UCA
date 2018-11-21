@@ -6,6 +6,26 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MedianRunArray",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "MedianRunArray",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - VisualizeBT",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "VisualizeBT",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RecoverBST",
             "request": "launch",
             "cwd": "${workspaceFolder}",

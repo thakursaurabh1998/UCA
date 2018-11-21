@@ -11,38 +11,35 @@ public class MedianRunArray {
     }
 
     void insert(int key) {
-        min.add(key);
+        if (max.size() == 0 || max.peek() >= key) {
+            max.add(key);
+        } else {
+            min.add(key);
+        }
         int diff = min.size() - max.size();
         if (diff > 1)
             max.add(min.remove());
+        if (Math.abs(min.size() - max.size()) > 1) {
+            if (min.size() > max.size())
+                max.add(min.remove());
+            else
+                min.add(max.remove());
+        }
     }
 
-    Integer median() {
+    Double median() {
         if (max.size() == min.size())
-            return (max.peek() + min.peek()) / 2;
-
-        return max.size() > min.size() ? max.peek() : min.peek();
+            return (max.peek() + min.peek()) / 2.0;
+        return max.size() > min.size() ? max.peek() / 1.0 : min.peek() / 1.0;
     }
 
     public static void main(String[] args) {
         MedianRunArray m = new MedianRunArray();
-        m.insert(10);
+        m.insert(94455);
         System.out.println(m.median());
-        m.insert(7);
+        m.insert(20555);
         System.out.println(m.median());
-        m.insert(4);
-        System.out.println(m.median());
-        m.insert(9);
-        System.out.println(m.median());
-        m.insert(2);
-        System.out.println(m.median());
-        m.insert(3);
-        System.out.println(m.median());
-        m.insert(11);
-        System.out.println(m.median());
-        m.insert(17);
-        System.out.println(m.median());
-        m.insert(14);
+        m.insert(20535);
         System.out.println(m.median());
     }
 }

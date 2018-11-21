@@ -18,6 +18,12 @@
 - [Zig Zag Traversal (Interview Bit)](./ADI/ZigZagTraversal.java)
 - [Next Right Pointer (Interview Bit)](./ADI/NextRightPointer.java)
 
+## Trie Tree
+
+- [Trie Tree](./ADI/TrieTree.java)
+- [Hotel Reviews (Interview Bit)](./ADI/HotelReview.java)
+- [Shortest Unique Prefix (Interview Bit)](./ADI/ShortestUniquePrefix.java)
+
 ## Heap
 
 - [Median of a running array](./ADI/MedianRunArray.java)
@@ -36,4 +42,5 @@
 ## Others
 
 - [Visualizing a binary tree (Not perfect works for almost all cases, currently under development)](./ADI/VisualizeBT.java)
-![Image Mockup](./ADI/tree.png)
+
+  ![Image Mockup](./ADI/tree.png)

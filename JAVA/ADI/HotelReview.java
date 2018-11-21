@@ -28,23 +28,23 @@ class CompareCount implements Comparator<struct> {
     }
 }
 
-public class Trie {
-    Trie[] arr;
+public class HotelReview {
+    HotelReview[] arr;
     boolean isEndOfWord;
 
-    Trie() {
-        this.arr = new Trie[26];
+    HotelReview() {
+        this.arr = new HotelReview[26];
         for (int i = 0; i < 26; i++)
             this.arr[i] = null;
         this.isEndOfWord = false;
     }
 
     void insert(String str) {
-        Trie root = this;
+        HotelReview root = this;
         for (int i = 0; i < str.length(); i++) {
             int j = str.charAt(i) - 'a';
             if (root.arr[j] == null)
-                root.arr[j] = new Trie();
+                root.arr[j] = new HotelReview();
             root = root.arr[j];
         }
         root.isEndOfWord = true;
@@ -89,7 +89,7 @@ public class Trie {
 
     static void solution(String a, String[] b) {
         String[] res = a.split("_");
-        Trie o = new Trie();
+        HotelReview o = new HotelReview();
         for (String i : res)
             o.insert(i);
         struct[] st = new struct[b.length];
@@ -113,7 +113,7 @@ public class Trie {
         String a = "cool_ice_wifi";
         String[] b = new String[] { "water_is_cool", "wifi", "cold_ice_drink", "cool_wifi_speed", "cool_ice_wifi_jaihind_cool" };
         solution(a, b);
-        // Trie o = new Trie();
+        // HotelReview o = new HotelReview();
         // o.insert("hello");
         // o.insert("hell");
         // System.out.println(o.search("hell", 0));
