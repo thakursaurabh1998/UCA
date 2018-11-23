@@ -36,6 +36,7 @@
 - [Two sum (Interview Bit)](./ADI/TwoSum.java)
 - [Longest substring without repeat (Interview Bit)](./ADI/LongestSubstring.java)
 - [Colorful Numebers (Interview Bit)](./ADI/ColorfulNumber.java)
+- [Anagrams (Interview Bit)](./ADI/anagram.py)
 
 ## Graph
 
