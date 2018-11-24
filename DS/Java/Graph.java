@@ -1,22 +1,137 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
-// graph created with adjacency list
-public class Graph {
-    ArrayList<LinkedList<Integer>> vertices;
-    int v;
+class Bag implements Iterable<Integer> {
+    private Node first;
+    private Node last;
 
-    Graph(int v) {
-        this.vertices = new ArrayList<>();
-        this.v = v;
-        for (int i = 0; i < v; i++)
-            this.vertices.add(new LinkedList<>());
+    private class Node {
+        int data;
+        Node next;
+
+        Node(int d) {
+            this.data = d;
+            this.next = null;
+        }
     }
 
-    public void addEdge(int v1, int v2) {
-        this.vertices.get(v1).add(v2);
-        this.vertices.get(v2).add(v1);
+    Bag() {
+        this.first = this.last = null;
+    }
+
+    public void enque(int i) {
+        if (this.first == null) {
+            this.first = new Node(i);
+            this.last = this.first;
+        } else {
+            this.last.next = new Node(i);
+            this.last = this.last.next;
+        }
+    }
+
+    public int getFirstData() {
+        return this.first.data;
+    }
+
+    public String toString() {
+        return "Hello";
+    }
+
+    public Iterator<Integer> iterator() {
+        return new Iterator<Integer>() {
+            private Node current = first;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public Integer next() {
+                int temp = current.data;
+                current = current.next;
+                return temp;
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException("no changes allowed");
+            }
+        };
+    }
+}
+
+public class Graphs {
+    int v;
+    int e;
+    private final int V;
+    Bag[] adj;
+
+    Graphs(int v) {
+        this.V = v;
+        this.adj = new Bag[v];
+        for (Bag i : this.adj) {
+            i = new Bag();
+        }
+        this.v = 0;
+        this.e = 0;
+    }
+
+    public void addEdge(int v, int w) {
+        if (this.adj[v] == null)
+            this.adj[v] = new Bag();
+        this.adj[v].enque(w);
+        if (v != w) {
+            if (this.adj[w] == null)
+                this.adj[w] = new Bag();
+            adj[w].enque(v);
+        }
+        this.e++;
+    }
+
+    public Iterable<Integer> adjacent(int v) {
+        return this.adj[v];
+    }
+
+    public int degree(int v) {
+        int count = 0;
+        for (int w : this.adjacent(v))
+            count++;
+        return count;
+    }
+
+    public boolean hasSelfLoop() {
+        for (int i = 0; i < this.V; i++) {
+            for (int j : this.adjacent(i)) {
+                if (j == i)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasCycle() {
+
+        return false;
+    }
+
+    private void dfs(boolean[] visited, int v) {
+        visited[v] = true;
+        for (int i : this.adjacent(v)) {
+            if (!visited[i])
+                dfs(visited, i);
+        }
+    }
+
+    public int connectedComponents() {
+        int count = 0;
+        boolean[] visited = new boolean[this.V];
+        for (Bag i : this.adj) {
+            if (!visited[i.getFirstData()]) {
+                count++;
+                dfs(visited, i.getFirstData());
+            }
+        }
+        return count;
     }
 
     public void printGraph() {
@@ -30,61 +145,23 @@ public class Graph {
         }
     }
 
-    private void dfsRecursive(int vertex, boolean[] visited) {
-        System.out.println(vertex);
-        visited[vertex] = true;
-        for (int i = 0; i < this.vertices.get(vertex).size(); i++) {
-            int v = this.vertices.get(vertex).get(i);
-            if (!visited[v])
-                dfsRecursive(v, visited);
-        }
-    }
-
-    public void dfs() {
-        boolean[] visited = new boolean[this.v];
-        dfsRecursive(0, visited);
-    }
-
-    public void bfs() {
-        Queue<Integer> q = new LinkedList<>();
-        boolean[] visited = new boolean[this.v];
-        q.add(0);
-        visited[0] = true;
-        while (!q.isEmpty()) {
-            int top = q.remove();
-            System.out.println(top);
-            for (Integer i : vertices.get(top)) {
-                if (!visited[i]) {
-                    visited[i] = true;
-                    q.add(i);
-                }
-            }
-        }
-    }
-
     public static void main(String[] args) {
-        Graph obj = new Graph(6);
-        // obj.addEdge(0, 1);
-        // obj.addEdge(0, 4);
-        // obj.addEdge(1, 2);
-        // obj.addEdge(1, 3);
-        // obj.addEdge(1, 4);
-        // obj.addEdge(2, 3);
-        // obj.addEdge(3, 4);
-
-        obj.addEdge(0, 1);
-        obj.addEdge(0, 2);
-        obj.addEdge(1, 3);
-        obj.addEdge(1, 4);
-        obj.addEdge(2, 4);
-        obj.addEdge(3, 4);
-        obj.addEdge(3, 5);
-        obj.addEdge(4, 5);
-
-        obj.bfs();
-
-        // obj.dfs();
-
-        // obj.printGraph();
+        Graphs g = new Graphs(13);
+        g.addEdge(0, 0);
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(0, 5);
+        g.addEdge(0, 6);
+        g.addEdge(5, 3);
+        g.addEdge(5, 4);
+        g.addEdge(3, 4);
+        g.addEdge(4, 6);
+        g.addEdge(7, 8);
+        g.addEdge(9, 10);
+        g.addEdge(9, 11);
+        g.addEdge(11, 12);
+        g.addEdge(9, 12);
+        System.out.println(g.hasSelfLoop());
+        System.out.println(g.connectedComponents());
     }
 }

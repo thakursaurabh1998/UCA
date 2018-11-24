@@ -61,6 +61,6 @@ public class LeavesOfSubtree {
 
         obj.leaves(1);
 
-        obj.printGraph();
+        // obj.printGraph();
     }
 }

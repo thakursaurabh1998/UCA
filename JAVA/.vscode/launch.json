@@ -6,6 +6,36 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Graphs",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Graphs",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NodeOutDegree",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.saurabh.util.NodeOutDegree",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LeavesOfSubtree",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "LeavesOfSubtree",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MedianRunArray",
             "request": "launch",
             "cwd": "${workspaceFolder}",
