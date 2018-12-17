@@ -20,7 +20,7 @@ node *createNode(int data)
     return temp;
 }
 
-void leftRotate(node *x)
+node *leftRotate(node *x)
 {
     node *t = x->right;
     node *u = t->left;
@@ -28,7 +28,7 @@ void leftRotate(node *x)
     x->right = u;
 }
 
-void rightRotate(node *x)
+node *rightRotate(node *x)
 {
     node *t = x->left;
     node *u = t->right;
@@ -56,7 +56,7 @@ node *insert(node *root, int key)
         root->left = insert(root->left, key);
     else
         root->right = insert(root->right, key);
-    root->height = max(height(root->left), height(root->right));
+    root->height = MAX(height(root->left), height(root->right));
     int b = getBalance(root);
     if (b > 1)
     {
@@ -74,4 +74,25 @@ node *insert(node *root, int key)
             root->left = rightRotate(root->left);
         return rightRotate(root);
     }
+}
+
+void recursiveInorder(node *root)
+{
+    if (root == NULL)
+        return;
+    recursiveInorder(root->left);
+    printf("%d ", root->data);
+    recursiveInorder(root->right);
+}
+
+int main()
+{
+    node *root = NULL;
+    root = insert(root, 1);
+    root = insert(root, 2);
+    root = insert(root, 3);
+    root = insert(root, 4);
+    root = insert(root, 5);
+    recursiveInorder(root);
+    // root->left = createNode(3);
 }

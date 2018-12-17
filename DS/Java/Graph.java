@@ -1,4 +1,7 @@
-import java.util.*;
+// import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Iterator;
 
 class Bag implements Iterable<Integer> {
     private Node first;
@@ -60,19 +63,19 @@ class Bag implements Iterable<Integer> {
     }
 }
 
-public class Graphs {
+public class Graph {
     int v;
     int e;
     private final int V;
     Bag[] adj;
 
-    Graphs(int v) {
+    Graph(int v) {
         this.V = v;
         this.adj = new Bag[v];
         for (Bag i : this.adj) {
             i = new Bag();
         }
-        this.v = 0;
+        this.v = v;
         this.e = 0;
     }
 
@@ -109,16 +112,32 @@ public class Graphs {
         return false;
     }
 
-    public boolean hasCycle() {
-
-        return false;
-    }
-
-    private void dfs(boolean[] visited, int v) {
+    private void dfsCycle(boolean[] visited, int v, int parent) {
         visited[v] = true;
         for (int i : this.adjacent(v)) {
             if (!visited[i])
-                dfs(visited, i);
+                dfsCycle(visited, i, i);
+            else if (visited[i] && i != parent)
+                cycle = true;
+        }
+    }
+
+    static boolean cycle = false;
+
+    // NOTE: check if there is a single node 
+    public boolean hasCycle() {
+        boolean[] visited = new boolean[this.V];
+        for (Bag i : this.adj) {
+            dfsCycle(visited, i.getFirstData(), -1);
+        }
+        return cycle;
+    }
+
+    private void dfsForConnectedComponents(boolean[] visited, int v) {
+        visited[v] = true;
+        for (int i : this.adjacent(v)) {
+            if (!visited[i])
+                dfsForConnectedComponents(visited, i);
         }
     }
 
@@ -128,40 +147,63 @@ public class Graphs {
         for (Bag i : this.adj) {
             if (!visited[i.getFirstData()]) {
                 count++;
-                dfs(visited, i.getFirstData());
+                dfsForConnectedComponents(visited, i.getFirstData());
             }
         }
         return count;
     }
 
     public void printGraph() {
-        for (int i = 0; i < this.v; i++) {
+        for (int i = 0; i < this.V; i++) {
             System.out.println("Adjacency list of vertex " + i);
             System.out.print("head");
-            for (Integer j : this.vertices.get(i)) {
+            for (Integer j : this.adjacent(i)) {
                 System.out.print(" -> " + j);
             }
             System.out.println("\n");
         }
     }
 
+    public void bfs() {
+        Queue<Integer> q = new LinkedList<>();
+        boolean[] visited = new boolean[this.v];
+        q.add(0);
+        visited[0] = true;
+        while (!q.isEmpty()) {
+            int top = q.remove();
+            System.out.println(top);
+            for (int i : this.adjacent(top)) {
+                if (!visited[i]) {
+                    visited[i] = true;
+                    q.add(i);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        Graphs g = new Graphs(13);
-        g.addEdge(0, 0);
+        Graph g = new Graph(4);
         g.addEdge(0, 1);
         g.addEdge(0, 2);
-        g.addEdge(0, 5);
-        g.addEdge(0, 6);
-        g.addEdge(5, 3);
-        g.addEdge(5, 4);
-        g.addEdge(3, 4);
-        g.addEdge(4, 6);
-        g.addEdge(7, 8);
-        g.addEdge(9, 10);
-        g.addEdge(9, 11);
-        g.addEdge(11, 12);
-        g.addEdge(9, 12);
-        System.out.println(g.hasSelfLoop());
-        System.out.println(g.connectedComponents());
+        g.addEdge(1, 3);
+        // g.addEdge(0, 0);
+        // g.addEdge(0, 1);
+        // g.addEdge(0, 2);
+        // g.addEdge(0, 5);
+        // g.addEdge(0, 6);
+        // g.addEdge(5, 3);
+        // g.addEdge(5, 4);
+        // g.addEdge(3, 4);
+        // g.addEdge(4, 6);
+        // g.addEdge(7, 8);
+        // g.addEdge(9, 10);
+        // g.addEdge(9, 11);
+        // g.addEdge(11, 12);
+        // g.addEdge(9, 12);
+        // System.out.println(g.hasSelfLoop());
+        // System.out.println(g.connectedComponents());
+        // System.out.println(g.hasCycle());
+        g.bfs();
+        // g.printGraph();
     }
 }
