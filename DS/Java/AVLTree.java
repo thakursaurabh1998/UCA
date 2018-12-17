@@ -1,102 +1,112 @@
-class AVL {
-    class Node {
-        int data;
-        Node left;
-        Node right;
+import java.util.*;
 
-        Node(int d) {
-            data = d;
-            left = right = null;
-        }
+public class AVL {
+  Node root;
+
+  private class Node {
+    Node left;
+    Node right;
+    int data;
+
+    Node(int d) {
+      this.data = d;
+      this.left = null;
+      this.right = null;
     }
+  }
 
-    private Node root;
+  private int getHeight(Node head) {
+    if (head == null)
+      return 0;
+    return 1 + Math.max(getHeight(head.left), getHeight(head.right));
+  }
 
-    AVL() {
-        root = null;
+  private int getBalance(Node head) {
+    return this.getHeight(head.left) - this.getHeight(head.right);
+  }
+
+  private Node rotateRight(Node head) {
+    Node h = head.left;
+    Node t = h.right;
+    head.left = t;
+    h.right = head;
+    return h;
+  }
+
+  private Node rotateLeft(Node head) {
+    Node h = head.right;
+    Node t = h.left;
+    head.right = t;
+    h.left = head;
+    return h;
+  }
+
+  private Node insertR(int k, Node head) {
+    if (head == null)
+      return new Node(k);
+    if (head.data > k) {
+      head.left = insertR(k, head.left);
+    } else {
+      head.right = insertR(k, head.right);
     }
-
-    void insert(int key) {
-        root = insertRecursive(root, key);
+    int b = this.getBalance(head);
+    if (b > 1) {
+      if (this.getBalance(head.left) < 0)
+        head.left = this.rotateLeft(head.left);
+      head = this.rotateRight(head);
+    } else if (b < -1) {
+      if (this.getBalance(head.right) > 0)
+        head.right = this.rotateRight(head.right);
+      head = this.rotateLeft(head);
     }
+    return head;
+  }
 
-    private void inorder(Node r) {
-        if (r == null)
-            return;
-        inorder(r.left);
-        System.out.print(r.data + " ");
-        inorder(r.right);
-    }
+  public void insert(int k) {
+    this.root = this.insertR(k, this.root);
+  }
 
-    void inorderDisp() {
-        inorder(root);
+  public void levelOrder() {
+    Queue<Node> q = new LinkedList<>();
+    q.add(this.root);
+    q.add(null);
+    Node head;
+    while (!q.isEmpty()) {
+      Node temp = q.remove();
+      if (temp == null && !q.isEmpty()) {
+        q.add(null);
+        System.out.println();
+      } else if (temp != null) {
+        if (temp.left != null)
+          q.add(temp.left);
+        if (temp.right != null)
+          q.add(temp.right);
+        System.out.print(temp.data + " ");
+      }
     }
+  }
 
-    private int height(Node r) {
-        if (r == null)
-            return 0;
-        return 1 + Math.max(height(r.left), height(r.right));
-    }
+  private void inorderR(Node head) {
+    if (head == null)
+      return;
+    inorderR(head.left);
+    System.out.print(head.data + " ");
+    inorderR(head.right);
+  }
 
-    private int getBalance(Node r) {
-        if (r == null)
-            return 0;
-        return height(r.right) - height(r.left);
-    }
+  public void inorder() {
+    this.inorderR(this.root);
+    System.out.println();
+  }
 
-    private Node leftRotate(Node x) {
-        Node temp = x.right;
-        Node u = temp.left;
-        temp.left = x;
-        x.right = u;
-        return temp;
-    }
-
-    private Node rightRotate(Node x) {
-        Node temp = x.left;
-        Node u = temp.right;
-        temp.right = x;
-        x.left = u;
-        return temp;
-    }
-
-    private Node insertRecursive(Node r, int key) {
-        if (r == null) {
-            r = new Node(key);
-            return r;
-        }
-        if (r.data > key)
-            r.left = insertRecursive(r.left, key);
-        else
-            r.right = insertRecursive(r.right, key);
-        int balance = getBalance(r);
-        if (balance > 1) {
-            int c = getBalance(r.right);
-            if (c < 0)
-                r.right = rightRotate(r.right);
-            r = leftRotate(r);
-        } else if (balance < -1) {
-            int c = getBalance(r.left);
-            if (c > 0)
-                r.left = leftRotate(r.left);
-            r = rightRotate(r);
-        }
-        return r;
-    }
-}
-
-public class AVLTree {
-    public static void main(String[] args) {
-        AVL n = new AVL();
-        n.insert(15);
-        n.insert(20);
-        n.insert(24);
-        n.insert(10);
-        n.insert(13);
-        n.insert(7);
-        n.insert(30);
-        n.insert(36);
-        n.insert(25);
-        n.inorderDisp();
-    }
+  public static void main(String[] args) {
+    AVL t = new AVL();
+    t.insert(5);
+    t.insert(4);
+    t.insert(3);
+    t.insert(2);
+    t.insert(1);
+    t.inorder();
+    t.levelOrder();
+  }
 }

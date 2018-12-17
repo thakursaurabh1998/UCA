@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
@@ -10,36 +11,47 @@ public class MedianRunArray {
         max = new PriorityQueue<>(Collections.reverseOrder());
     }
 
-    void insert(int key) {
+    public void insert(int key) {
         if (max.size() == 0 || max.peek() >= key) {
             max.add(key);
         } else {
             min.add(key);
         }
-        int diff = min.size() - max.size();
-        if (diff > 1)
-            max.add(min.remove());
-        if (Math.abs(min.size() - max.size()) > 1) {
-            if (min.size() > max.size())
+        int minsize = min.size();
+        int maxsize = max.size();
+        if (Math.abs(minsize - maxsize) > 1) {
+            if (minsize > maxsize)
                 max.add(min.remove());
             else
                 min.add(max.remove());
         }
     }
 
-    Double median() {
-        if (max.size() == min.size())
-            return (max.peek() + min.peek()) / 2.0;
-        return max.size() > min.size() ? max.peek() / 1.0 : min.peek() / 1.0;
+    public Double median() {
+        int minsize = min.size();
+        int maxsize = max.size();
+        if (minsize == maxsize)
+            return (min.peek() + max.peek()) / 2.0;
+        if (minsize > maxsize)
+            return min.peek() / 1.0;
+        return max.peek() / 1.0;
+    }
+
+    public double[] runningMedian(int[] a) {
+        double dbl[] = new double[a.length];
+        int p = 0;
+        for (int i = 0; i < a.length; i++) {
+            this.insert(a[i]);
+            dbl[p++] = this.median();
+        }
+        return dbl;
     }
 
     public static void main(String[] args) {
         MedianRunArray m = new MedianRunArray();
-        m.insert(94455);
-        System.out.println(m.median());
-        m.insert(20555);
-        System.out.println(m.median());
-        m.insert(20535);
-        System.out.println(m.median());
+        int[] array = new int[] { 94455, 20555, 20535, 53125, 73634, 148, 63772, 17738, 62995 };
+        double[] answer = new double[] { 94455.0, 57505.0, 20555.0, 36840.0, 53125.0, 36840.0, 53125.0, 36840.0, 53125.0 };
+        System.out.println(Arrays.toString(m.runningMedian(array)));
+        System.out.println(Arrays.toString(answer));
     }
 }

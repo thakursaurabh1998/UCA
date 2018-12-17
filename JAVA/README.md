@@ -27,7 +27,6 @@
 ## Heap
 
 - [Median of a running array](./ADI/MedianRunArray.java)
-- [**_Trie tree_** Hotel Review (Interview Bit)](./ADI/Trie.java)
 - [Merge K sorted Linked List (Interview Bit)](./ADI/MergeKSortedLL.java)
 - [N max pair combinations](./ADI/MaxPairComb.java)
 
